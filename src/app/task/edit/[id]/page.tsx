@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Task, UpdateTask } from "@/interface/Task";
-import { Input, Textarea } from "@nextui-org/react";
+import { Input, Textarea } from "@heroui/react";
 import { Label } from "@radix-ui/react-label";
 import { useParams, useRouter } from "next/navigation";
 import { set } from "zod";

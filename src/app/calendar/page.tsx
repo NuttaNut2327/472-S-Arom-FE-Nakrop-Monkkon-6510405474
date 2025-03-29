@@ -246,7 +246,7 @@ export default function CalendarPage() {
     data: tasks,
     isLoading: taskLoading,
     error: taskError,
-  } = useUserIdTask(userData?.user_id)
+  } = useUserIdTask(userData?.user_id, { enabled: !!userData?.user_id })
 
   useEffect(() => {
     if (!diaryLoading && diaries) {
