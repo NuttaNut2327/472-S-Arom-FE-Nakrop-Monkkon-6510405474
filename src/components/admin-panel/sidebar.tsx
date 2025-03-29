@@ -6,7 +6,7 @@ import { useSidebar } from "@/hooks/use-sidebar";
 import { useStore } from "@/hooks/use-store";
 import { cn } from "@/lib/utils";
 import { PanelsTopLeft } from "lucide-react";
-import { Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import Link from "next/link";
 
 export function Sidebar() {
