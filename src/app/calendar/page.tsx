@@ -246,9 +246,7 @@ export default function CalendarPage() {
     data: tasks,
     isLoading: taskLoading,
     error: taskError,
-  } = useUserIdTask(userData?.user_id, {
-    enabled: !!userData?.user_id, // เรียกใช้งานก็ต่อเมื่อ user_id มีค่า
-  });
+  } = useUserIdTask(userData?.user_id, { enabled: !!userData?.user_id })
 
   useEffect(() => {
     if (!diaryLoading && diaries) {
