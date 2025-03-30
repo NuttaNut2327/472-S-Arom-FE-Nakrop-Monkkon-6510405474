@@ -1,20 +1,20 @@
-# Dockerfile for Development environment
-FROM node:22-alpine AS dev
+FROM node:22-alpine
 
+# Set working directory
 WORKDIR /app
 
-# Install pnpm
-RUN npm install -g pnpm
+# Install pnpm globally
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Install Dependencies
-COPY package.json .
-COPY pnpm-lock.yaml ./
-RUN pnpm install
+# Copy package files and install dependencies
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 
-# Copy the entire project
+# Copy the rest of the application
 COPY . .
 
-ENV NODE_ENV=development
+# Expose Next.js default port
 EXPOSE 3000
 
-CMD [ "pnpm", "dev" ]
+# Start the development server
+CMD ["pnpm", "dev"]
